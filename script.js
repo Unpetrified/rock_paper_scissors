@@ -16,7 +16,7 @@ function userPick() {
     return userPick
 }
 
-function play(com, user) {
+function playRound(com, user) {
     if (round > 1) {
         console.log("Round " + round);
     } else {
@@ -25,7 +25,7 @@ function play(com, user) {
     console.log("You played: " + user, "Computer played: " + com);
     if (com === user) {
         console.log("Tie");
-        play(comPick(), userPick())
+        playRound(comPick(), userPick())
         return
     } else if (com === "rock" && user === "paper") {
         console.log("Paper covers Rock!");
@@ -68,9 +68,9 @@ function roundWinner(winner) {
     return
 }
 
-function playRound() {
+function playGame() {
     while (round <= 5) {
-        play(comPick(), userPick())
+        playRound(comPick(), userPick())
         round++
     }
 
@@ -82,4 +82,4 @@ function playRound() {
     console.log("!!!I win!!!");
 }
 
-playRound()
+playGame()
