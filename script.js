@@ -2,6 +2,12 @@ let userScore = 0,
     comScore = 0,
     round = 1;
 
+let buttons = document.querySelectorAll(".rock-paper-scissors");
+
+buttons.forEach(button => {
+    button.addEventListener('click', userPick);
+})
+
 function comPick() {
     
     let num = Math.floor(Math.random() * 10)
@@ -11,9 +17,9 @@ function comPick() {
     return "scissors"
 }
 
-function userPick() {
-    let userPick = (prompt("Rock, Paper, Scissors: ")).toLowerCase();
-    return userPick
+function userPick(e) {
+    let userPick = e.target.getAttribute("id");
+    playRound(comPick(), userPick);
 }
 
 function playRound(com, user) {
@@ -25,7 +31,6 @@ function playRound(com, user) {
     console.log("You played: " + user, "Computer played: " + com);
     if (com === user) {
         console.log("Tie");
-        playRound(comPick(), userPick())
         return
     } else if (com === "rock" && user === "paper") {
         console.log("Paper covers Rock!");
@@ -81,5 +86,3 @@ function playGame() {
 
     console.log("!!!I win!!!");
 }
-
-playGame()
