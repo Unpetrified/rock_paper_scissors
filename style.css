@@ -1,0 +1,14 @@
+.rock-paper-scissors-container {
+    display: flex;
+    padding: 20px 30%;
+    justify-content: space-between;
+    outline: 2px solid black;
+}
+
+.rock-paper-scissors {
+    padding: 20px 40px;
+    background-color: rgb(0, 115, 209);
+    color: white;
+    font-weight: bolder;
+    border: none;
+}
