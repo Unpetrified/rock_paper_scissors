@@ -1,7 +1,11 @@
 .rock-paper-scissors-container {
     display: flex;
-    padding: 20px 30%;
-    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 100px;
+    padding-bottom: 20px;
 }
 
 .rock-paper-scissors {
@@ -10,4 +14,41 @@
     color: white;
     font-weight: bolder;
     border: none;
+    width: 200px;
+}
+
+.round {
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+}
+
+.reason {
+    text-align: center;
+}
+
+.round-winner {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bolder;
+}
+
+.score {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.play {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.winner {
+    font-weight: bolder;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 100px;
 }
