@@ -40,19 +40,16 @@ function checkRound() {
 
     if (round + 1 > 5) {
 
-        if (userScore > comScore) {
-            winner.textContent = "!!!You Win!!!"
-            return
-        }
-        winner.textContent = "!!!I Win !!!"
+        (userScore > comScore) ? winner.textContent = "!!!You Win!!!" : winner.textContent = "!!!I Win !!!";
 
         let resetBtn = document.createElement("button");
         resetBtn.textContent = "Play Again";
+        resetBtn.classList.add("reset")
         resetBtn.addEventListener('click', reset)
 
-        let stats = document.querySelector(".stats");
+        let statsRound = document.querySelector(".stats-round");
 
-        stats.appendChild(resetBtn);
+        statsRound.appendChild(resetBtn);
     }   
 }
 
@@ -62,6 +59,12 @@ function reset(e) {
     round = 0;
     tie = false;
     winner.textContent = "";
+    scoreBoard.textContent = "";
+    roundWinnerDisplay.textContent = "";
+    playerOne.textContent = "";
+    playerTwo.textContent = "";
+    reason.textContent = "";
+    roundDisplay.textContent = "Click the bottons below to start.";
 
     e.target.remove();
 }
@@ -154,18 +157,4 @@ function roundWinner(winner) {
     comScore++;
     scoreBoard.textContent = "User: " +userScore + " Computer: " +comScore;
     return
-}
-
-function playGame() {
-    while (round <= 5) {
-        playRound(comPick(), userPick())
-        round++
-    }
-
-    if (userScore > comScore) {
-        console.log("You win!");
-        return
-    }
-
-    console.log("!!!I win!!!");
 }
